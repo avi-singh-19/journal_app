@@ -1,0 +1,38 @@
+<html lang="en-GB">
+  <%= form_with(model: item) do |form| %>
+
+    <div class="mb-3">
+      <%= form.label :name, style: "display: block", class: "form-label" %>
+      <%= form.text_field :name, class: "form-control", autocomplete: 'off', placeholder: "Title"  %>
+      <div style="color: red">
+        <% if item.errors.include?(:name) %>
+          <% item.errors.full_messages_for(:name).each do |error_message| %>
+            <%= error_message %>.
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :description, style: "display: block", class: "form-label" %>
+      <%= form.text_area :description, class: "form-control", autocomplete: 'off', placeholder: "Description" %>
+      <div style="color: red">
+        <% if item.errors.include?(:description) %>
+          <% item.errors.full_messages_for(:description).each do |error_message| %>
+            <%= error_message %>.
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <div class="field form-group">
+        <%= form.hidden_field :user_id, class:"form-control", value: Current.user.id, display: :none %>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <%= form.submit "Save", class: "btn btn-success btn-block" %>
+    </div>
+  <% end %>
+</html>

@@ -1,0 +1,14 @@
+<html lang="en-GB">
+  <h1>New item</h1>
+
+  <%= render "form", item: @item %>
+
+  <br>
+
+  <div>
+    <%#= button_to "Back to items", items_path, class: "btn btn-outline-secondary" %>
+    <a href="/items">
+      <button type="button" class="btn btn-secondary btn">Back to items</button>
+    </a>
+  </div>
+</html>

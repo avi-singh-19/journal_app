@@ -1,0 +1,9 @@
+Run scenarios in parallel:
+parallel_cucumber features -o"-f pretty --publish-quiet"
+
+Run scenarios in parallel and generate a report:
+parallel_cucumber features -o"-f pretty --publish"
+
+Run scenarios in series:
+cucumber features
+cucumber

@@ -1,0 +1,70 @@
+<div class = "d-flex align-items-center justify-content-center">
+  <h1>Welcome to Journal</h1>
+</div>
+<hr>
+
+<div class = "d-flex align-items-center justify-content-center">
+    <div class="card" style="width: 75rem;">
+      <img src="assets/headers" class="card-img-top" alt="...">
+      <div class="card-body">
+        <div class = "vstack gap">
+          <h3 class="card-title text-center">Notes made easy</h3>
+          <p class="card-text text-center">
+            Create personal notes with your unique login, edit them or remove them to make way for new ideas.
+          <p class="card-text text-center fw-semibold">
+            See what Journal App can do for you by creating your free account today!
+          </p>
+          <% if Current.user %>
+            <div class = "d-flex align-items-center justify-content-center">
+              <a href="/items">
+                <button type="button" class="btn btn-primary">Get started</button>
+              </a>
+            </div>
+          <% else %>
+            <div class = "d-flex align-items-center justify-content-center">
+              <a href="/sign-up">
+                <button type="button" class="btn btn-primary">Get started</button>
+              </a>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+<hr>
+
+<div class = "d-flex align-items-center justify-content-center">
+  <div class="card" style="width: 75rem;">
+    <img src="assets/notes" class="card-img-top" alt="...">
+    <div class="card-body">
+      <div class = "vstack gap">
+        <h3 class="card-title text-center">Take control of your learning</h3>
+        <p class="card-text text-center">
+          Journal App was designed to make note taking easy and can be used for so many purposes, from tracking
+          your personal learning goals to detailing your professional progress. Visit our About page to learn more about what Journal can do.
+        </p>
+        <div class = "d-flex align-items-center justify-content-center">
+          <a href="/about">
+            <button type="button" class="btn btn-primary">Learn more about Journal</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
+
+<% if Current.user %>
+  <div class = "d-flex align-items-center justify-content-center">
+    <a href="/items">
+      <button type="button" class="btn btn-success btn-lg">Resume journaling</button>
+    </a>
+  </div>
+<% else %>
+  <div class = "d-flex align-items-center justify-content-center">
+    <a href="/login">
+      <button type="button" class="btn btn-success btn-lg">Welcome back!</button>
+    </a>
+  </div>
+<% end %>
+<hr>

@@ -1,0 +1,19 @@
+Feature: Can the pages be loaded successfully?
+  Helps to determine the journal was successfully opened
+
+Scenario: Check the title of the root (Home) page
+  Given I am on the journal home page
+  When I click Home
+  Then I should see 'Welcome to Journal'
+
+Scenario: Check the title of the About page
+  Given I am on the About page
+  Then I should see 'About Journal'
+
+Scenario: Check the title of the Sign Up page
+  Given I am on the Sign Up page
+  Then I should see 'Sign Up'
+
+Scenario: Check the title of the Login page
+  Given I am on the Login page
+  Then I should see 'Login'

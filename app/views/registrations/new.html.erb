@@ -1,0 +1,38 @@
+<h1>Sign Up</h1>
+<hr>
+
+<%= form_with model: @user, url:sign_up_path do |form| %>
+  <% if @user.errors.any? %>
+    <div class ="alert alert-danger">
+      <% @user.errors.full_messages.each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+    <% end %>
+
+    <div class="mb-3">
+      <%= form.label :email %>
+      <%= form.text_field "email", class: "form-control", placeholder: "user@email.com", autocomplete: 'off' %>
+      <div id="emailHelp" class="form-text">We will never share your information with anyone else.</div>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :password %>
+      <%= form.password_field "password", class: "form-control", placeholder: "Password"%>
+      <div id="passwordHelpBlock" class="form-text">Your password must not be blank.</div>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :password_confirmation%>
+      <%= form.password_field "password_confirmation", class: "form-control", placeholder: "Confirm password" %>
+    </div>
+
+    <div class="vstack gap-3">
+      <div>
+        <%= form.submit "Sign Up", class: "btn btn-primary"%>
+      </div>
+      <div class = "d-flex align-items-center justify-content-center">
+        <%= render partial: "shared/login-redirect-button"%>
+      </div>
+    </div>
+<% end %>
