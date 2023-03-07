@@ -1,11 +1,8 @@
-require 'simplecov'
-SimpleCov.start 'rails'
-SimpleCov.coverage_dir 'coverage/cucumber'
-
 require 'selenium-webdriver'
 require 'capybara'
 require 'capybara/dsl'
 require 'capybara/cucumber'
+require 'active_support/testing/time_helpers'
 # require 'cucumber/rails'
 # require 'dotenv/load'
 

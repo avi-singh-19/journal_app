@@ -1,3 +1,6 @@
+include ActiveSupport::Testing::TimeHelpers
+require 'active_support/testing/time_helpers'
+
 Given(/^I am on the journal home page$/) do
   visit "http://127.0.0.1:3000"
 end
@@ -29,6 +32,6 @@ Then(/^I should see 'Sign Up'$/) do
   page.has_title? "Sign Up"
 end
 
-
-
-
+When(/^I have been inactive for (\d+) seconds$/) do |arg|
+  travel_to(Time.now + arg)
+end

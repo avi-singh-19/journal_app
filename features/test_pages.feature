@@ -17,3 +17,10 @@ Scenario: Check the title of the Sign Up page
 Scenario: Check the title of the Login page
   Given I am on the Login page
   Then I should see 'Login'
+
+Scenario: Test the inactivity timer
+  Given I have logged in
+  And I am on the Items page
+  When I have been inactive for 65 seconds
+  And I click the 'New item' button
+  Then I should see 'Login'

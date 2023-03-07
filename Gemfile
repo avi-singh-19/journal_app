@@ -89,4 +89,5 @@ group :test do
   gem 'simplecov-rcov'
   gem 'parallel_tests'
   gem 'cucumber-rails'
+  gem 'timecop'
 end
