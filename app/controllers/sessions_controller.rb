@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  auto_session_timeout_actions
   def new
   end
   def create
@@ -13,5 +14,11 @@ class SessionsController < ApplicationController
   def destroy
     session[:user_id] = nil
     redirect_to "/", notice: "Logged out"
+  end
+  def active
+    render_session_status
+  end
+  def timeout
+    render_session_timeout
   end
 end

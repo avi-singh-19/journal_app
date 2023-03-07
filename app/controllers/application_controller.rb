@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  auto_session_timeout 1.minute
   before_action :set_current_user
 
   def set_current_user

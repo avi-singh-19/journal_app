@@ -15,6 +15,12 @@
   </head>
 
   <body>
+  <% if Current.user %>
+    <%= auto_session_timeout_js %>
+  <% end %>
+  </body>
+
+  <body>
   <div class="sticky-top">
     <%= render partial: "shared/navbar" %>
   </div>

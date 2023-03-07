@@ -20,4 +20,6 @@ Rails.application.routes.draw do
 
   delete "logout", to:"sessions#destroy"
 
+  get "active",  to: "sessions#active"
+  get "timeout", to: "sessions#timeout"
 end
