@@ -25,6 +25,11 @@
       </div>
     </div>
 
+  <div class="mb-3">
+    <%= form.label :URL, style: "display: block", class: "form-label" %>
+    <%= form.text_field :URL, class: "form-control", autocomplete: 'off', placeholder: "Optional URL" %>
+  </div>
+
     <div class="mb-3">
       <div class="field form-group">
         <%= form.hidden_field :user_id, class:"form-control", value: Current.user.id, display: :none %>
