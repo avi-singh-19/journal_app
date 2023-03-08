@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
 
   # GET /items or /items.json
   def index
-    @items = Item.all
+    @items = Item.all.order(:tags)
     respond_to do |format|
       format.html
       format.pdf do
@@ -86,6 +86,6 @@ class ItemsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def item_params
-      params.require(:item).permit(:name, :description, :user_id, :URL)
+      params.require(:item).permit(:name, :description, :user_id, :URL, :tags)
     end
 end

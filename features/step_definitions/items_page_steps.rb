@@ -55,7 +55,7 @@ Given(/^I have created an item$/) do
 end
 
 When(/^I click the Edit button$/) do
-  within(:css, "td[class='hstack gap-3']") do
+  within(:css, "td[class='hstack gap-1']") do
     find(".btn.btn-success").click
   end
 end
@@ -75,7 +75,7 @@ end
 
 And(/^I click Delete$/) do
   page.accept_confirm do
-    within(:css, "td[class='hstack gap-3']") do
+    within(:css, "td[class='hstack gap-1']") do
       find(".btn.btn-danger").click
     end
   end
@@ -95,7 +95,7 @@ Then(/^I should see a '\.pdf' page$/) do
 end
 
 When(/^I click the Show button$/) do
-  within(:css, "td[class='hstack gap-3']") do
+  within(:css, "td[class='hstack gap-1']") do
     find(".btn.btn-secondary").click
   end
 end

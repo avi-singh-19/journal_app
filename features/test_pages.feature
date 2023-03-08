@@ -21,6 +21,6 @@ Scenario: Check the title of the Login page
 Scenario: Test the inactivity timer
   Given I have logged in
   And I am on the Items page
-  When I have been inactive for 65 seconds
+  When I have been inactive for 600 seconds
   And I click the 'New item' button
   Then I should see 'Login'

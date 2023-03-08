@@ -25,10 +25,16 @@
       </div>
     </div>
 
-  <div class="mb-3">
-    <%= form.label :URL, style: "display: block", class: "form-label" %>
-    <%= form.text_field :URL, class: "form-control", autocomplete: 'off', placeholder: "Optional URL" %>
-  </div>
+    <div class="mb-3">
+      <%= form.label :URL, style: "display: block", class: "form-label" %>
+      <%= form.text_field :URL, class: "form-control", autocomplete: 'off', placeholder: "Optional URL" %>
+    </div>
+
+
+    <div class="mb-3">
+      <%= form.label :tags, style: "display: block", class: "form-label" %>
+      <%= form.select :tags, ['None', 'Python', 'Java', 'Ruby', 'Ruby on Rails', 'Business Analysis'], { }, { :style => 'border:none' } %>
+    </div>
 
     <div class="mb-3">
       <div class="field form-group">

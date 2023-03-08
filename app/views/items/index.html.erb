@@ -4,25 +4,30 @@
   <h1>Items</h1>
 
   <div id="items">
-    <table class="table">
+    <table class="table table-borderless">
       <thead>
       <tr>
         <th scope="col">Name</th>
         <th scope="col">Description</th>
+        <th scope="col">Tags</th>
+        <%#= link_to "Tags", sort: "tags" %>
         <th scope="col"></th>
       </tr>
       </thead>
       <tbody>
       <% @items.each do |item| %>
         <% if item.user == Current.user %>
-          <tr scope="row">
-            <td style="width: 25%">
-              <%= item.name %>
+          <tr>
+            <td style="width: 15%">
+              <%= item.name.truncate_words(3) %>
             </td>
-            <td style="white-space: normal; width: 40%">
-              <%= item.description.truncate_words(5) %>
+            <td style="white-space: normal; width: 35%">
+              <%= item.description.truncate_words(10) %>
             </td>
-            <td style="width: 100%", class="hstack gap-3">
+            <td style="white-space: normal; width: 15%">
+              <%= item.tags %>
+            </td>
+            <td class="hstack gap-1">
               <%= link_to "Show", item, class: "btn btn-secondary" %>
               <%= link_to "Delete", item, class: "btn btn-danger", method: :delete, data: { "turbo-method": :delete, turbo_confirm: "Are you sure?" } %>
               <%= link_to "Edit", edit_item_path(item), class: "btn btn-success" %>
@@ -37,6 +42,5 @@
   <p>
     <%= link_to "New item", new_item_path, class: "btn btn-primary", data: { turbo_frame: "remote_modal" }%>
     <%= link_to "Generate PDF", "/items.pdf", class: "btn btn-primary" %>
-
   </p>
 </html>
