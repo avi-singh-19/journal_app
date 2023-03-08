@@ -1,8 +1,62 @@
 <html lang="en-GB">
-<style>
-    h1{text-align: center}
-</style>
+    <style>
+        h1{text-align: center}
+        h3{font-size:22px}
+        p{font-size:20px}
+    </style>
 
-<h1><%= "Item ID: #{@item.id}" %></h1>
-<%= render @item %>
+    <h1><%= "#{@item.name}" %></h1>
+    <p style="color: green"><%= notice %></p>
+    <hr>
+
+    <div class="card border-0">
+      <div class="card-body">
+        <h3 class="card-title">Description</h3>
+        <p class="card-text"><%= @item.description %></p>
+      </div>
+    </div>
+
+    <div style="height:10px; background: transparent;">
+      <hr style="display:none;" />
+    </div>
+
+    <% if @item.URL? %>
+      <div class="card border-0">
+        <div class="card-body">
+          <h3 class="card-title">Specified URL</h3>
+          <p class="card-text"><%= @item.URL %></p>
+        </div>
+      </div>
+    <% else %>
+      <div class="card border-0">
+        <div class="card-body">
+          <h3 class="card-title">No specified URL</h3>
+        </div>
+      </div>
+    <% end %>
+
+    <div style="height:10px; background: transparent;">
+      <hr style="display:none;" />
+    </div>
+
+    <% if @item.tags != "None" %>
+      <div class="card border-0">
+        <div class="card-body">
+          <h3 class="card-title">Tags</h3>
+          <p class="card-text"><%= @item.tags %></p>
+        </div>
+      </div>
+    <% else %>
+      <div class="card border-0">
+        <div class="card-body">
+          <h3 class="card-title">No specified tags</h3>
+        </div>
+      </div>
+    <% end %>
+
+    <div style="height:10px; background: transparent;">
+      <hr style="display:none;" />
+    </div>
+
+
 </html>
