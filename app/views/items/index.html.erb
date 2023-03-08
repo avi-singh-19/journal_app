@@ -1,16 +1,14 @@
 <html lang="en-GB">
-  <p style="color: green"><%= notice %></p>
-
   <h1>Items</h1>
+  <p style="color: green"><%= notice %></p>
+  <hr>
 
   <div id="items">
     <table class="table table-borderless">
       <thead>
       <tr>
         <th scope="col">Name</th>
-        <th scope="col">Description</th>
         <th scope="col">Tags</th>
-        <%#= link_to "Tags", sort: "tags" %>
         <th scope="col"></th>
       </tr>
       </thead>
@@ -18,13 +16,10 @@
       <% @items.each do |item| %>
         <% if item.user == Current.user %>
           <tr>
-            <td style="width: 15%">
-              <%= item.name.truncate_words(3) %>
+            <td style="width: 20%">
+              <%= item.name.truncate_words(5) %>
             </td>
-            <td style="white-space: normal; width: 35%">
-              <%= item.description.truncate_words(10) %>
-            </td>
-            <td style="white-space: normal; width: 15%">
+            <td style="white-space: normal; width: 80%">
               <%= item.tags %>
             </td>
             <td class="hstack gap-1">

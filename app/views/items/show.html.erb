@@ -1,7 +1,58 @@
 <html lang="en-GB">
+  <h1>
+    <%= @item.name %>
+  </h1>
   <p style="color: green"><%= notice %></p>
+  <hr>
 
-  <%= render @item %>
+  <div class="card border-0">
+    <div class="card-body">
+      <h3 class="card-title">Description</h3>
+      <p class="card-text"><%= @item.description %></p>
+    </div>
+  </div>
+
+  <div style="height:10px; background: transparent;">
+    <hr style="display:none;" />
+  </div>
+
+  <% if @item.URL? %>
+    <div class="card border-0">
+      <div class="card-body">
+        <h3 class="card-title">Specified URL</h3>
+        <p class="card-text"><%= @item.URL %></p>
+      </div>
+    </div>
+<% else %>
+  <div class="card border-0">
+    <div class="card-body">
+      <h3 class="card-title">No specified URL</h3>
+    </div>
+  </div>
+  <% end %>
+
+  <div style="height:10px; background: transparent;">
+    <hr style="display:none;" />
+  </div>
+
+  <% if @item.tags != "None" %>
+    <div class="card border-0">
+      <div class="card-body">
+        <h3 class="card-title">Tags</h3>
+        <p class="card-text"><%= @item.tags %></p>
+      </div>
+    </div>
+  <% else %>
+  <div class="card border-0">
+    <div class="card-body">
+      <h3 class="card-title">No specified Tags</h3>
+    </div>
+  </div>
+  <% end %>
+
+  <div style="height:10px; background: transparent;">
+    <hr style="display:none;" />
+  </div>
 
   <div>
     <div class = "d-flex align-items-center justify-content-center hstack gap-3">
