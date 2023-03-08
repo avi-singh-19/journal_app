@@ -28,6 +28,7 @@ Scenario: Check I can create and delete an item
   And I should see 'New item'
   When I fill in Name with 'Test Entry'
   And I fill in Description with 'This is a test entry'
+  And I fill in URL with 'https://google.com/"
   And I click Save
   Then I should see 'Items'
   And I click Delete

@@ -99,3 +99,7 @@ When(/^I click the Show button$/) do
     find(".btn.btn-secondary").click
   end
 end
+
+And(/^I fill in URL with 'https:\/\/google\.com\/"$/) do
+  fill_in("Url", :with => "https://google.com")
+end
