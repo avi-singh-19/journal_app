@@ -8,19 +8,25 @@
       <img src="assets/headers" class="card-img-top" alt="...">
       <div class="card-body">
         <div class = "vstack gap">
-          <h3 class="card-title text-center">Notes made easy</h3>
-          <p class="card-text text-center">
-            Create personal notes with your unique login, edit them or remove them to make way for new ideas.
-          <p class="card-text text-center fw-semibold">
-            See what Journal App can do for you by creating your free account today!
-          </p>
           <% if Current.user %>
+            <h3 class="card-title text-center">Notes made easy</h3>
+            <p class="card-text text-center">
+              Create personal notes with your unique login, edit them or remove them to make way for new ideas.
+            <p class="card-text text-center fw-semibold">
+              <%= "Welcome back, #{Current.user.email}!" %>
+            </p>
             <div class = "d-flex align-items-center justify-content-center">
               <a href="/items">
-                <button type="button" class="btn btn-primary">Get started</button>
+                <button type="button" class="btn btn-success">Resume Journaling</button>
               </a>
             </div>
           <% else %>
+            <h3 class="card-title text-center">Notes made easy</h3>
+            <p class="card-text text-center">
+              Create personal notes with your unique login, edit them or remove them to make way for new ideas.
+            <p class="card-text text-center fw-semibold">
+              See what Journal App can do for you by creating your free account today!
+            </p>
             <div class = "d-flex align-items-center justify-content-center">
               <a href="/sign-up">
                 <button type="button" class="btn btn-primary">Get started</button>
@@ -54,17 +60,11 @@
 </div>
 <hr>
 
-<% if Current.user %>
-  <div class = "d-flex align-items-center justify-content-center">
-    <a href="/items">
-      <button type="button" class="btn btn-success btn-lg">Resume journaling</button>
-    </a>
-  </div>
-<% else %>
-  <div class = "d-flex align-items-center justify-content-center">
-    <a href="/login">
-      <button type="button" class="btn btn-success btn-lg">Welcome back!</button>
-    </a>
-  </div>
-<% end %>
+<% unless Current.user %>
+<div class="d-flex align-items-center justify-content-center">
+      <a href="/login">
+        <button type="button" class="btn btn-success btn-lg">Login</button>
+      </a>
+</div>
 <hr>
+<% end %>

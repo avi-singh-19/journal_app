@@ -7,11 +7,11 @@ Scenario: Check the 'Get Started' button on 'Home' page when not logged in
   When I click the "Get started" button
   Then I should see 'Sign Up'
 
-Scenario: Check the 'Get Started' button on 'Home' page when logged in
+Scenario: Check the 'Resume Journaling' button on 'Home' page when logged in
   Given I am on the journal home page
   And I should see 'Welcome to Journal'
   And I have logged in
-  When I click the "Get started" button
+  When I click the "Resume Journaling" button
   Then I should see 'Items'
 
 Scenario: Check the 'Learn more about Journal' button on 'Home' page
@@ -20,18 +20,11 @@ Scenario: Check the 'Learn more about Journal' button on 'Home' page
   When I click the "Learn more about Journal" button
   Then I should see 'About Journal'
 
-Scenario: Check the 'Welcome back!' button on 'Home' page
+Scenario: Check the 'Login' button on 'Home' page
   Given I am on the journal home page
   And I should see 'Welcome to Journal'
-  When I click the "Welcome back!" button
+  When I click the "Login" button
   Then I should see 'Login'
-
-Scenario: Check the 'Resume journaling' button on 'Home' page
-  Given I am on the journal home page
-  And I should see 'Welcome to Journal'
-  And I have logged in
-  When I click the "Resume journaling" button
-  Then I should see 'Items'
 
 Scenario: Check the 'Create an account' button on 'About' page
   Given I am on the About page
