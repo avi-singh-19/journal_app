@@ -19,16 +19,16 @@
   <% if @item.URL? %>
     <div class="card border-0">
       <div class="card-body">
-        <h3 class="card-title">Specified URL</h3>
+        <h4 class="card-title">Specified URL</h4>
         <p class="card-text"><%= @item.URL %></p>
       </div>
     </div>
-<% else %>
-  <div class="card border-0">
-    <div class="card-body">
-      <h3 class="card-title">No specified URL</h3>
+  <% else %>
+    <div class="card border-0">
+      <div class="card-body">
+        <h4 class="card-title">No specified URL</h4>
+      </div>
     </div>
-  </div>
   <% end %>
 
   <div style="height:10px; background: transparent;">
@@ -38,16 +38,35 @@
   <% if @item.tags != "None" %>
     <div class="card border-0">
       <div class="card-body">
-        <h3 class="card-title">Tags</h3>
+        <h4 class="card-title">Tags</h4>
         <p class="card-text"><%= @item.tags %></p>
       </div>
     </div>
   <% else %>
-  <div class="card border-0">
-    <div class="card-body">
-      <h3 class="card-title">No specified tags</h3>
+    <div class="card border-0">
+      <div class="card-body">
+        <h4 class="card-title">No specified tags</h4>
+      </div>
     </div>
+  <% end %>
+
+  <div style="height:10px; background: transparent;">
+    <hr style="display:none;" />
   </div>
+
+  <% if @item.image? %>
+    <div class="card border-0">
+      <div class="card-body">
+        <h4 class="card-title">Attached image</h4>
+        <%= image_tag(@item.image,  style:"height:auto; width:100%;") %>
+      </div>
+    </div>
+  <% else %>
+    <div class="card border-0">
+      <div class="card-body">
+        <h4 class="card-title">No uploaded image</h4>
+      </div>
+    </div>
   <% end %>
 
   <div style="height:10px; background: transparent;">
@@ -63,3 +82,7 @@
     </div>
   </div>
 </html>
+
+<div style="height:10px; background: transparent;">
+  <hr style="display:none;" />
+</div>

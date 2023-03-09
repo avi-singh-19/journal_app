@@ -5,58 +5,71 @@
         p{font-size:20px}
     </style>
 
-    <h1><%= "#{@item.name}" %></h1>
-    <p style="color: green"><%= notice %></p>
-    <hr>
+  <h1><%= "#{@item.name}" %></h1>
+  <p style="color: green"><%= notice %></p>
+  <hr>
 
+  <div class="card border-0">
+    <div class="card-body">
+      <h3 class="card-title">Description</h3>
+      <p class="card-text"><%= @item.description %></p>
+    </div>
+  </div>
+
+  <div style="height:10px; background: transparent;">
+    <hr style="display:none;" />
+  </div>
+
+  <% if @item.URL? %>
     <div class="card border-0">
       <div class="card-body">
-        <h3 class="card-title">Description</h3>
-        <p class="card-text"><%= @item.description %></p>
+        <h3 class="card-title">Specified URL</h3>
+        <p class="card-text"><%= @item.URL %></p>
       </div>
     </div>
-
-    <div style="height:10px; background: transparent;">
-      <hr style="display:none;" />
+  <% else %>
+    <div class="card border-0">
+      <div class="card-body">
+        <h3 class="card-title">No specified URL</h3>
+      </div>
     </div>
+  <% end %>
 
-    <% if @item.URL? %>
-      <div class="card border-0">
-        <div class="card-body">
-          <h3 class="card-title">Specified URL</h3>
-          <p class="card-text"><%= @item.URL %></p>
-        </div>
-      </div>
-    <% else %>
-      <div class="card border-0">
-        <div class="card-body">
-          <h3 class="card-title">No specified URL</h3>
-        </div>
-      </div>
-    <% end %>
+  <div style="height:10px; background: transparent;">
+    <hr style="display:none;" />
+  </div>
 
-    <div style="height:10px; background: transparent;">
-      <hr style="display:none;" />
+  <% if @item.tags != "None" %>
+    <div class="card border-0">
+      <div class="card-body">
+        <h3 class="card-title">Tags</h3>
+        <p class="card-text"><%= @item.tags %></p>
+      </div>
     </div>
-
-    <% if @item.tags != "None" %>
-      <div class="card border-0">
-        <div class="card-body">
-          <h3 class="card-title">Tags</h3>
-          <p class="card-text"><%= @item.tags %></p>
-        </div>
+  <% else %>
+    <div class="card border-0">
+      <div class="card-body">
+        <h3 class="card-title">No specified tags</h3>
       </div>
-    <% else %>
-      <div class="card border-0">
-        <div class="card-body">
-          <h3 class="card-title">No specified tags</h3>
-        </div>
-      </div>
-    <% end %>
-
-    <div style="height:10px; background: transparent;">
-      <hr style="display:none;" />
     </div>
+  <% end %>
 
+  <div style="height:10px; background: transparent;">
+    <hr style="display:none;" />
+  </div>
 
+  <% if @item.image? %>
+    <div class="card border-0">
+      <div class="card-body">
+        <h3 class="card-title">Attached image</h3>
+        <%= image_tag(@item.image,  style:"height:100px") %>
+      </div>
+    </div>
+  <% else %>
+    <div class="card border-0">
+      <div class="card-body">
+        <h3 class="card-title">No uploaded image</h3>
+      </div>
+    </div>
+  <% end %>
 </html>

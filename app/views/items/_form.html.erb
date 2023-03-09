@@ -30,17 +30,31 @@
       <%= form.text_field :URL, class: "form-control", autocomplete: 'off', placeholder: "Optional URL" %>
     </div>
 
-
     <div class="mb-3">
       <%= form.label :tags, style: "display: block", class: "form-label" %>
-      <%= form.select :tags, ['None', 'Python', 'Java', 'Ruby', 'Ruby on Rails', 'Business Analysis'], { }, { :style => 'border:none' } %>
+      <%= form.select :tags, ['None', 'Python', 'Java', 'Ruby', 'Ruby on Rails', 'Business Analysis', 'Image'], { }, { :style => 'border:none' } %>
     </div>
+
+    <div class="mb-3">
+      <%= form.label :image, style: "display: block", class: "form-label" %>
+      <label class="btn btn-outline-secondary btn-change-avatar">
+        Choose file
+        <span style="display:none; text-align: left">
+          <div class = "field" >
+            <%= form.file_field :image %>
+          </div>
+        </span>
+      </label>
+    </div>
+
+<!--DO NOT EDIT HIDDEN_FIELD DIV-->
 
     <div class="mb-3">
       <div class="field form-group">
         <%= form.hidden_field :user_id, class:"form-control", value: Current.user.id, display: :none %>
       </div>
     </div>
+
 
     <div class="mb-3">
       <%= form.submit "Save", class: "btn btn-success btn-block" %>

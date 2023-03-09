@@ -18,42 +18,19 @@
           <p style="font-size:20px" class="card-text"><%= "Specified URL: #{item.URL}" %></p>
         <% else %>
           <p style="font-size:20px" class="card-text"><%= "No specified URL" %></p>
-      <% end %>
+        <% end %>
         <% if item.tags != "None" %>
           <p style="font-size:20px" class="card-text"><%= "Tags: #{item.tags}" %></p>
         <% else %>
           <p style="font-size:20px" class="card-text"><%= "No specified tags" %></p>
         <% end %>
-
+        <% if item.image? %>
+          <%= image_tag(item.image,  style:"height:100px") %>
+        <% else %>
+          <p style="font-size:20px" class="card-text"><%= "No uploaded image" %></p>
+        <% end %>
       </div>
     </div>
   <% end %>
 
-
-
-
-<!--  <div id="items">-->
-<!--    <table class="table">-->
-<!--      <thead>-->
-<!--      <tr>-->
-<!--        <th scope="col">Name</th>-->
-<!--        <th scope="col">Description</th>-->
-<!--      </tr>-->
-<!--      </thead>-->
-<!--      <tbody>-->
-      <%# @items.each do |item| %>
-        <%# if item.user == Current.user %>
-<!--          <tr scope="row">-->
-<!--            <td style="width: 20%">-->
-              <%#= item.name %>
-<!--            </td>-->
-<!--            <td style="white-space: normal; width: 80%">-->
-              <%#= item.description %>
-<!--            </td>-->
-<!--          </tr>-->
-        <%# end %>
-      <%# end %>
-<!--      </tbody>-->
-<!--    </table>-->
-<!--  </div>-->
 </html>
