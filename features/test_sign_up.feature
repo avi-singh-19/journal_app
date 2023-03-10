@@ -37,3 +37,12 @@ Scenario: Fill in form with good email, valid password but non matching confirma
   And I click the "Sign Up" button
   Then I should get an error that this is wrong
   And I should see 'Sign Up'
+
+Scenario: Fill in form with all bad details
+  Given I am on the Sign Up page
+  And I should see 'Sign Up'
+  When I fill in Email with 'garbage_barge'
+  And I fill in Password with 'pass'
+  And I click the "Sign Up" button
+  Then I should get an error that this is wrong
+  And I should see 'Sign Up'

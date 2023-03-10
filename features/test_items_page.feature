@@ -32,7 +32,6 @@ Scenario: Check I can create and delete an item
   And I click Save
   Then I should see 'Items'
   And I click Delete
-#  Then I should see an alert on screen and click 'OK'
 
 Scenario: Check I can edit an existing item
   Given I have created an item
