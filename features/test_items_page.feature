@@ -66,3 +66,22 @@ Scenario: Check I can access an individual PDF for one entry
   When I am on the Items page
   And I should see 'Items'
   Then I click Delete
+
+Scenario: Check I can add an image to an entry
+  Given I have logged in and I am on 'Items'
+  And I click the 'New item' button
+  And I fill in Name with 'Test Entry'
+  And I fill in Description with 'This is a test entry'
+  And I click the 'Choose file' button
+  When I click Save
+  Then I should see 'Items'
+  And I click Delete
+
+Scenario: Check I can remove an image from an entry
+  Given I have created an image item
+  And I am on the Items page
+  When I click the Edit button
+  Then I click the 'Remove Image' button
+  And I click Save
+  Then I should see 'Items'
+  And I click Delete

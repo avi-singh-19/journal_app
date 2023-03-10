@@ -103,3 +103,21 @@ end
 And(/^I fill in URL with 'https:\/\/google\.com\/"$/) do
   fill_in("Url", :with => "https://google.com")
 end
+
+And(/^I click the 'Choose file' button$/) do
+  attach_file('/Users/avisingh/Documents/Testing documents 2/solirius.png') do
+    find(".btn.btn-outline-secondary").click
+  end
+end
+
+Given(/^I have created an image item$/) do
+  step %[I am on the 'New item' page]
+  step %[I fill in Name with 'Test Entry']
+  step %[I fill in Description with 'This is a test entry']
+  step %[I click the 'Choose file' button]
+  step %[I click Save]
+end
+
+Then(/^I click the 'Remove Image' button$/) do
+  find(".btn.btn-outline-secondary").click
+end

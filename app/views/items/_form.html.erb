@@ -36,16 +36,29 @@
     </div>
 
     <div class="mb-3">
-      <%= form.label :image, style: "display: block", class: "form-label" %>
-      <label class="btn btn-outline-secondary btn-change-avatar">
-        Choose file
-        <span style="display:none; text-align: left">
+      <% if @item.image.attached? %>
+        <%= form.label :image, style: "display: block", class: "form-label" %>
+        <label class="btn btn-outline-secondary btn-change-avatar">
+        Remove image
+          <span style="display:none; text-align: left">
+            <div class = "field" >
+              <%= form.check_box :remove_image %>
+            </div>
+          </span>
+        </label>
+      <% else %>
+        <%= form.label :image, style: "display: block", class: "form-label" %>
+        <label class="btn btn-outline-secondary btn-change-avatar">
+          Choose file
+          <span style="display:none; text-align: left">
           <div class = "field" >
             <%= form.file_field :image %>
           </div>
         </span>
-      </label>
+        </label>
+      <% end %>
     </div>
+
 
 <!--DO NOT EDIT HIDDEN_FIELD DIV-->
 
