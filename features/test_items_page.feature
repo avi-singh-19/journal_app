@@ -79,7 +79,7 @@ Scenario: Check I can add an image to an entry
 
 Scenario: Check I can remove an image from an entry
   Given I have created an image item
-  And I am on the Items page
+  And I should see 'Items'
   When I click the Edit button
   Then I click the 'Remove Image' button
   And I click Save
