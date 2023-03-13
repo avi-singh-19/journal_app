@@ -8,9 +8,9 @@ Scenario: Check the 'Get Started' button on 'Home' page when not logged in
   Then I should see 'Sign Up'
 
 Scenario: Check the 'Resume Journaling' button on 'Home' page when logged in
-  Given I am on the journal home page
+  Given I have logged in
+  And I am on the journal home page
   And I should see 'Welcome to Journal'
-  And I have logged in
   When I click the "Resume Journaling" button
   Then I should see 'Items'
 

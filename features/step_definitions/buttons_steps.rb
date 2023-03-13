@@ -57,3 +57,7 @@ end
 When(/^I click the "([^"]*)" button$/) do |text|
   find_button("#{text}").click
 end
+
+When(/^I click 'Resume Journaling'$/) do
+  click_button("Resume Journaling")
+end
