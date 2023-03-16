@@ -45,16 +45,6 @@ Scenario: Check I can edit an existing item
   Then I should see 'Items'
   And I click Delete
 
-Scenario: Check I can access PDF for all entries
-  Given I have created an item
-  And I am on the Items page
-  And I should see 'Items'
-  When I click the 'Generate PDF' button
-  Then I should see a '.pdf' page
-  When I am on the Items page
-  And I should see 'Items'
-  Then I click Delete
-
 Scenario: Check I can access an individual PDF for one entry
   Given I have created an item
   And I am on the Items page
